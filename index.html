@@ -1,0 +1,107 @@
+index.html<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZedNumber Zambia</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f7f4;
+  color: #173b2d;
+}
+header {
+  background: #087b50;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+main {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 20px;
+}
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000010;
+}
+h2 { color: #087b50; }
+button {
+  background: #087b50;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+input {
+  width: 95%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+.note {
+  background: #fff6d9;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🇿🇲 ZedNumber</h1>
+<p>Your Zambian Number Platform</p>
+</header>
+
+<main>
+<div class="card">
+<h2>Welcome to ZedNumber</h2>
+<p>Get connected with Zambian mobile numbers.</p>
+<p><b>Country:</b> Zambia 🇿🇲</p>
+<p><b>Network:</b> Airtel Zambia</p>
+<p><b>Code:</b> +260</p>
+</div>
+
+<div class="card">
+<h2>Create your account</h2>
+<input id="name" placeholder="Your name">
+<input id="email" type="email" placeholder="Your email">
+<button onclick="register()">Register</button>
+<p id="message"></p>
+</div>
+
+<div class="card">
+<h2>Number services</h2>
+<p>📱 Zambian virtual numbers</p>
+<p>💬 SMS inbox</p>
+<p>📞 Calling services</p>
+<p>🟢 WhatsApp registration support</p>
+<div class="note">
+Real numbers, SMS and calls require an authorized telecom provider. No number has been assigned yet.
+</div>
+</div>
+</main>
+
+<script>
+function register() {
+ const name = document.getElementById("name").value.trim();
+ const email = document.getElementById("email").value.trim();
+ const message = document.getElementById("message");
+
+ if (!name || !email) {
+   message.textContent = "Please enter your name and email.";
+   return;
+ }
+ message.textContent = "Welcome, " + name + "! Registration demo successful.";
+}
+</script>
+
+</body>
+</html>
