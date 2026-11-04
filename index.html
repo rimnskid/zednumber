@@ -1,107 +1,95 @@
-index.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZedNumber Zambia</title>
+<title>ZedNumber</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f3f7f4;
-  color: #173b2d;
-}
-header {
-  background: #087b50;
-  color: white;
-  padding: 25px;
-  text-align: center;
-}
-main {
-  max-width: 650px;
-  margin: 30px auto;
-  padding: 20px;
-}
-.card {
-  background: white;
-  padding: 22px;
-  margin-bottom: 18px;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px #00000010;
-}
-h2 { color: #087b50; }
-button {
-  background: #087b50;
-  color: white;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-input {
-  width: 95%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-}
-.note {
-  background: #fff6d9;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 13px;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#073b75;color:white;padding:22px 8%;display:flex;justify-content:space-between;align-items:center}
+header h2{margin:0}
+nav a{color:white;text-decoration:none;margin-left:18px}
+.hero{background:linear-gradient(120deg,#073b75,#0879c9);color:white;padding:65px 8%;text-align:center}
+.hero h1{font-size:38px}
+.hero p{font-size:17px}
+main{max-width:1000px;margin:30px auto;padding:0 18px}
+.panel{background:white;padding:25px;border-radius:12px;margin-bottom:22px;box-shadow:0 3px 12px #00000010}
+input,button{padding:13px;width:100%;margin:8px 0;border-radius:7px;border:1px solid #ccd4df}
+button{background:#0879c9;color:white;border:0;font-weight:bold;cursor:pointer}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
+.service{background:#eef5fc;padding:20px;border-radius:10px}
+footer{text-align:center;background:#073b75;color:white;padding:20px;margin-top:40px}
+.note{font-size:13px;color:#657083}
 </style>
 </head>
 <body>
-
 <header>
-<h1>🇿🇲 ZedNumber</h1>
-<p>Your Zambian Number Platform</p>
+<h2>🇿🇲 ZedNumber</h2>
+<nav><a href="#home">Home</a><a href="#register">Register</a><a href="#services">Services</a></nav>
 </header>
 
+<section class="hero" id="home">
+<h1>Your Zambian Number Hub</h1>
+<p>Explore mobile number services in one place.</p>
+<p>Made for Zambia 🇿🇲</p>
+</section>
+
 <main>
-<div class="card">
-<h2>Welcome to ZedNumber</h2>
-<p>Get connected with Zambian mobile numbers.</p>
-<p><b>Country:</b> Zambia 🇿🇲</p>
-<p><b>Network:</b> Airtel Zambia</p>
-<p><b>Code:</b> +260</p>
-</div>
-
-<div class="card">
+<section class="panel" id="register">
 <h2>Create your account</h2>
+<p>Join the ZedNumber demonstration.</p>
 <input id="name" placeholder="Your name">
-<input id="email" type="email" placeholder="Your email">
-<button onclick="register()">Register</button>
+<input id="email" type="email" placeholder="Your email address">
+<button onclick="register()">Create demo account</button>
 <p id="message"></p>
-</div>
+<p class="note">This is a demonstration only. Do not enter passwords or sensitive information.</p>
+</section>
 
-<div class="card">
-<h2>Number services</h2>
-<p>📱 Zambian virtual numbers</p>
-<p>💬 SMS inbox</p>
-<p>📞 Calling services</p>
-<p>🟢 WhatsApp registration support</p>
-<div class="note">
-Real numbers, SMS and calls require an authorized telecom provider. No number has been assigned yet.
+<section class="panel">
+<h2>Customer dashboard</h2>
+<p>Welcome to your ZedNumber dashboard.</p>
+<p><strong>Account:</strong> Demo account</p>
+<p><strong>Available numbers:</strong> Not connected yet</p>
+<button onclick="alert('Real number services are not connected yet.')">Explore numbers</button>
+</section>
+
+<section class="panel">
+<h2>Owner dashboard</h2>
+<p>Owner tools will be added as the project develops.</p>
+<p><strong>Number inventory:</strong> Not connected</p>
+<p><strong>Customer payments:</strong> Not connected</p>
+</section>
+
+<section class="panel" id="services">
+<h2>Our services</h2>
+<div class="services">
+<div class="service"><h3>📱 Zambian numbers</h3><p>Explore number services.</p></div>
+<div class="service"><h3>💬 SMS inbox</h3><p>SMS service demonstration.</p></div>
+<div class="service"><h3>📞 Calls</h3><p>Calling service demonstration.</p></div>
+<div class="service"><h3>🌐 WhatsApp</h3><p>Compatibility information.</p></div>
 </div>
-</div>
+</section>
+
+<section class="panel">
+<h2>Important information</h2>
+<p>Real Airtel Zambia numbers, SMS, calls and WhatsApp registration require an authorized telecom provider. These services are not active on this website yet.</p>
+</section>
 </main>
 
-<script>
-function register() {
- const name = document.getElementById("name").value.trim();
- const email = document.getElementById("email").value.trim();
- const message = document.getElementById("message");
+<footer>© 2026 ZedNumber | Made in Zambia 🇿🇲</footer>
 
- if (!name || !email) {
-   message.textContent = "Please enter your name and email.";
-   return;
- }
- message.textContent = "Welcome, " + name + "! Registration demo successful.";
+<script>
+function register(){
+const name=document.getElementById("name").value.trim();
+const email=document.getElementById("email").value.trim();
+const message=document.getElementById("message");
+if(!name||!email||!email.includes("@")){
+message.textContent="Please enter a name and valid email.";
+return;
+}
+message.textContent="Welcome, "+name+"! Your demo account is ready.";
 }
 </script>
-
 </body>
 </html>
